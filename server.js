@@ -1,5 +1,5 @@
 import express from 'express';
-import { Db } from './config/Db.js';
+import  Db  from './config/Db.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import router from './Routes/routes.js';
