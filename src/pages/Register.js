@@ -20,7 +20,7 @@ const Register = () => {
 		const nationality = nationalityRef.current.value;
 
 		axios
-			.post('http://localhost:5000/register', {
+			.post('https://users-card.herokuapp.com/register', {
 				firstName,
 				lastName,
 				age,

@@ -8,7 +8,7 @@ const Profile = () => {
 	const params = useParams();
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5000/${params.uid}`)
+			.get(`https://users-card.herokuapp.com/${params.uid}`)
 			.then((res) => setData(res.data))
 			.catch((err) => console.log(err));
 	}, [params.uid]);

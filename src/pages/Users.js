@@ -8,7 +8,7 @@ const Users = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/users')
+			.get('https://users-card.herokuapp.com/users')
 			.then((res) => {
 				setData(res.data);
 			})
