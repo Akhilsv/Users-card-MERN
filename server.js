@@ -13,9 +13,11 @@ app.use(express.json());
 
 
 app.use('/', router);
-const PORT = '5000';
+app.listen(process.env.PORT || 4000, () => {
+	console.log(`app listening at http://localhost`);
+});
 
-app.listen(PORT, () => console.log('Server Started'));
+
 
 
 

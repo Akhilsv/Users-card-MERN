@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export const Db = () => {
 	mongoose
-		.connect(process.env.url, {
+		.connect('mongodb+srv://akhil:4pm18cs005@cluster0.s2nxc.mongodb.net/webQuark?retryWrites=true&w=majority', {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			useCreateIndex: true,
