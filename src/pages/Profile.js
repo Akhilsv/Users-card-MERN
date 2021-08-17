@@ -2,25 +2,37 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { LoadHolder, Loading } from '../components/Loading';
 
 const Profile = () => {
 	const [data, setData] = useState('');
+	const [loading, setLoading] = useState(true);
 	const params = useParams();
 	useEffect(() => {
 		axios
 			.get(`https://users-card.herokuapp.com/${params.uid}`)
-			.then((res) => setData(res.data))
+			.then((res) => {
+				setData(res.data);
+				setLoading(!loading);
+			})
 			.catch((err) => console.log(err));
 	}, [params.uid]);
 	console.log(data);
 	return (
 		<>
+			{loading && (
+				<LoadHolder>
+					<Loading />
+				</LoadHolder>
+			)}
 			{data && (
 				<ProfileHolder>
 					<Header>
 						<img
 							src={
-								data[0].gender === 'male' ? '/assets/man.png' : '/assets/woman.png'
+								data[0].gender === 'male'
+									? '/assets/man.png'
+									: '/assets/woman.png'
 							}
 							alt='people'
 						/>
