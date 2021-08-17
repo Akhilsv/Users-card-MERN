@@ -29,7 +29,7 @@ const Register = () => {
 			})
 			.then((res) => {
 				setMessage(res.data);
-				histroy.push('/users')
+				histroy.push('/users');
 			})
 			.catch((err) => console.log(err.response.data.data));
 	};
@@ -44,6 +44,7 @@ const Register = () => {
 						placeholder='First Name'
 						ref={firstnameRef}
 						required
+						autoComplete='off'
 					/>
 					<input
 						type='text'
@@ -51,21 +52,36 @@ const Register = () => {
 						placeholder='Last Name'
 						ref={lastNameRef}
 						required
+						autoComplete='off'
 					/>
-					<input
-						type='text'
+
+					<select
 						name='gender'
 						placeholder='Gender'
 						ref={genderRef}
+						autoComplete='off'>
+						<option value='' disabled selected id='gender'>
+							Select gender
+						</option>
+						<option value='male'>Male</option>
+						<option value='female'>Female</option>
+					</select>
+					<input
+						type='number'
+						name='age'
+						placeholder='Age'
+						ref={ageRef}
 						required
+						autoComplete='off'
 					/>
-					<input type='number' name='age' placeholder='Age' ref={ageRef} />
+
 					<input
 						type='text'
 						name='nationality'
 						placeholder='Nationality'
 						ref={nationalityRef}
 						required
+						autoComplete='off'
 					/>
 					<button type='submit'>Register</button>
 				</form>
@@ -89,7 +105,8 @@ const FormHolder = styled.div`
 		flex-direction: column;
 		justify-content: space-around;
 	}
-	input {
+	input,
+	select {
 		width: 50%;
 		height: 40px;
 		padding: 2px 20px;
@@ -110,6 +127,9 @@ const FormHolder = styled.div`
 		color: #f5f3f3;
 		font-size: 1rem;
 		font-weight: 600;
+	}
+	#gender {
+		opacity: 0.7;
 	}
 `;
 export default Register;

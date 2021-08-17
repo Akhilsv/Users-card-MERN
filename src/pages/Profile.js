@@ -72,6 +72,7 @@ const Header = styled.div`
 		margin-left: 30%;
 		font-weight: 600;
 		font-size: 1.5rem;
+		
 		@media (max-width: 600px) {
 			margin-left: 1%;
 			font-size: 1.4rem;

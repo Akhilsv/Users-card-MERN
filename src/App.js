@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Register from './pages/Register';
 import Users from './pages/Users';
 import Nav from './components/Nav';
@@ -19,7 +19,7 @@ const App = () => {
 					<Profile />
 				</Route>
 				<Route exact path='*'>
-					<Users />
+					<Redirect to='/users' />
 				</Route>
 			</Switch>
 		</>
